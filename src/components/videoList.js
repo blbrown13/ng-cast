@@ -3,9 +3,9 @@ angular.module('video-player')
   return {
     scope: { videos: '<' },
     controllerAs: 'ctrl',
+    bindToController: true,
     controller: function () {
       this.onClick = function(){};
-
     },
 
     templateUrl: "src/templates/videoList.html"

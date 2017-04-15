@@ -5,8 +5,9 @@ angular.module('video-player')
     scope: {
       video: '<'
     },
+    controllerAs: 'ctrl',
     controller: function() {
-      this.video = video;
+      // this.video = video;
     },
     templateUrl: "src/templates/videoPlayer.html"
   }
