@@ -2,6 +2,9 @@ angular.module('video-player')
 
 .directive('app', function() {
   return {
-    // TODO
-  };
+    scope: {
+      name: "="
+    },
+    templateUrl: "src/templates/app.html"
+  }
 });
