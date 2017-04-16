@@ -58,11 +58,11 @@ describe('app', function() {
     expect(searchDirectiveSpy.callCount).to.equal(1);
   });
 
-  xit('should search youTube when the app is initialized', function() {
+  it('should search youTube when the app is initialized', function() {
     expect(youTubeSpy.callCount).to.equal(1);
   });
 
-  xit('should load live data when the app is initialized', function() {
+  it('should load live data when the app is initialized', function() {
     expect(element.isolateScope().ctrl.videos).to.equal(fakeVideoData);
     expect(element.isolateScope().ctrl.currentVideo).to.equal(fakeVideoData[0]);
   });

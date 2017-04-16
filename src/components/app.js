@@ -1,18 +1,27 @@
-angular.module('video-player', [])
+angular.module('video-player')
 
+.controller('AppCtrl', function(youTube) {
+
+  this.searchService = youTube;
+  this.searchResults = (data) => {
+    this.videos = data;
+    this.currentVideo = this.videos[0];
+  };
+
+  this.selectVideo = (video) => {
+    this.currentVideo = video;
+  };
+
+  youTube.search('javascript tutorial', this.searchResults);
+})
 .directive('app', function() {
   return {
+
     scope: {},
+    restrict: 'E',
+    controller: 'AppCtrl',
     controllerAs: 'ctrl',
     bindToController: true,
-    controller: function() {
-      this.selectVideo = function() {};
-      this.searchResults = function() {};
-      this.currentVideo = window.exampleVideoData[0];
-      console.log('app currentVideo: ', this.currentVideo);
-      this.videos = window.exampleVideoData;
-      console.log('app videos: ', this.videos);
-    },
-    templateUrl: "src/templates/app.html",
-  }
+    templateUrl: 'src/templates/app.html'
+      };
 });
